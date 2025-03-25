@@ -1,3 +1,7 @@
+//Iteraciones Pair Programming
+
+// Arrays
+
 let arrayVacio = [];
 
 let arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -5,45 +9,49 @@ let arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let arrayNumerosPares = [];
 
 for (let i = 0; i < arrayNumeros.length; i++) {
-    if (i % 2 === 0) {
-        arrayNumerosPares.push(i)
-    }
+  if (i % 2 === 0) {
+    arrayNumerosPares.push(i);
+  }
 }
 
-let arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
+let arrayBidimensional = [
+  [0, 1, 2],
+  ["a", "b", "c"],
+];
 
-function suma (a, b) {
-    return a+b
+// Funciones
+
+function suma(a, b) {
+  return a + b;
 }
 
 function potenciacion(a, b) {
-    return a**b
+  return a ** b;
 }
 
 function separarPalabras(text) {
-    return text.split(" ")
-
+  return text.split(" ");
 }
 
 // let text = "hello world DUBAI"
 // console.log(separarPalabras(text))
 
 function repetirString(text, num) {
-    return text.repeat(num)
+  return text.repeat(num);
 }
-
 
 function esPrimo(num) {
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            return false
-        }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
     }
-    return true
+  }
+  return true;
 }
 
+// Mezclando arrays y funciones
 
-// 10.- Crea la función 'ordenarArray' que acepte como argumento un array de números y devuelva 
+// 10.- Crea la función 'ordenarArray' que acepte como argumento un array de números y devuelva
 // un array ordenado de menor a mayor
 // Ordenar [204, 227]
 // Ordenar [156, 158, 156, 159, 152, 138, 150, 153, 144, 152, 138]
@@ -51,11 +59,10 @@ function esPrimo(num) {
 // Ordenar []
 
 function ordenarArray(arrNum) {
-    return arrNum.sort()
+  return arrNum.sort();
 }
 
-
-// 11.- Crea la función 'obtenerPares' que acepte como argumento un array de números y devuelva 
+// 11.- Crea la función 'obtenerPares' que acepte como argumento un array de números y devuelva
 // un array con los elementos que sean pares
 // Pares en [51, 76, 59, 39]
 // Pares en [20, 13, 8]
@@ -64,17 +71,16 @@ function ordenarArray(arrNum) {
 // Pares en [0, 10, 9, 0]
 
 function obtenerPares(arrNum) {
-    let arrNumPar = []
-    for (let i = 0; i < arrNum.length; i++) {
-        if (arrNum[i] % 2 === 0) {
-            arrNumPar.push(arrNum[i])
-        }
+  let arrNumPar = [];
+  for (let i = 0; i < arrNum.length; i++) {
+    if (arrNum[i] % 2 === 0) {
+      arrNumPar.push(arrNum[i]);
     }
-    return arrNumPar    
-} 
+  }
+  return arrNumPar;
+}
 
-
-// 12.- Crea la función 'pintarArray' que acepte como argumento un array y devuelva 
+// 12.- Crea la función 'pintarArray' que acepte como argumento un array y devuelva
 // una cadena de texto Array: [0, 1, 2] String: '[0, 1, 2]'
 // Pintar array [3, 93, 142, 17, 139, 28, 23, 70, 140]
 // Pintar array [46, 72, 72, 72, 46, 83, 23]
@@ -83,14 +89,14 @@ function obtenerPares(arrNum) {
 // Pintar array [22, 102, 102, 23, 82, 85, 23, 77, 10]
 
 function pintarArray(arrNum) {
-    // Creamos un string con comas y espacios
-    const texto = arrNum.join(', ');
-    
-    // Devolvemos la cadena con corchetes alrededor
-    return `[${texto}]`;
+  // Creamos un string con comas y espacios
+  const texto = arrNum.join(", ");
+
+  // Devolvemos la cadena con corchetes alrededor
+  return `[${texto}]`;
 }
 
-// 13.- Crea la función 'arrayMapi' que acepte como argumento un array y una función y retorne 
+// 13.- Crea la función 'arrayMapi' que acepte como argumento un array y una función y retorne
 // un array en el que se haya aplicado la función a cada elemento del primer array
 // Array [139, 42, 84, 100]
 // Array [7, 54, 59, 7, 37, 54, 8]
@@ -98,11 +104,10 @@ function pintarArray(arrNum) {
 // Array [0, 101, 47, 91, 21]
 
 function arrayMapi(arrNum, func) {
-    return arrNum.map(func)
+  return arrNum.map(func);
 }
 
-
-// 14.-Crea la función 'eliminarDuplicados' que acepte como argumento un array y deberá devolver 
+// 14.-Crea la función 'eliminarDuplicados' que acepte como argumento un array y deberá devolver
 // un array en el que se hayan eliminado los duplicados
 // Eliminar duplicados de [15, 22, 37, 34, 46, 1, 15, 22, 11, 37, 34, 11, 1, 15, 22, 46, 37, 34, 11, 46, 1]
 // Eliminar duplicados de [127, 96, 125, 59, 115, 56, 126, 126, 96, 125, 59, 115, 56, 127, 126, 96, 125, 59, 115, 56, 127]
@@ -111,21 +116,83 @@ function arrayMapi(arrNum, func) {
 // Eliminar duplicados de [91, 1, 156, 91, 98, 1, 156, 91, 98, 1, 98, 156]
 
 function eliminarDuplicados(arr) {
-    let result = []
-    for (let i = 0; i < arr.length; i++) {
-        if (!result.includes(arr[i])) {
-            result.push(arr[i])
-        }
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!result.includes(arr[i])) {
+      result.push(arr[i]);
     }
-    return result
-} 
-
-function eliminarDuplicados(arr) {
-    return arr.filter((item, index) => arr.indexOf(item) === index)
+  }
+  return result;
 }
 
+function eliminarDuplicados(arr) {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+
+// Iteraciones proyecto
+
+// Arrays
+
+//15.- Crear variable de nombre arrayNumerosNeg declarada con un array de números del 0 al -9 (0, -1, -2...)
+
+let arrayNumerosNeg = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9];
+
+//  16.- Crear variable de nombre holaMundo declarada con valor array con las palabras 'Hola' y 'Mundo'
+
+let holaMundo = ["Hola", "Mundo"];
+
+//  17.- Crear variable de nombre loGuardoTodo declarada con valor array con valores 'hola', 'que', 23, 42.33 y 'tal'
+
+let loGuardoTodo = ["hola", "que", 23, 42.33, "tal"];
+
+//  18.- Crear variable de nombre arrayDeArrays declarada con valor array: [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
+
+let arrayDeArrays = [
+  [756, "nombre"],
+  [225, "apellido"],
+  [298, "direccion"],
+];
+
+// Funciones
+
+// 19.- Crea la función multiplicacion que acepte como argumento dos números y devuelva el resultado de su multiplicación
+
+function multiplicacion(a, b) {
+  return a * b;
+}
+
+//  20.- Crea la función division que acepte como argumento dos números y devuelva el resultado de su division
+
+function division(a, b) {
+  return a / b;
+}
+
+//  21.- Crea la función esPar que acepte como argumento un número y devuelva true si es par y false si es impar
+
+function esPar(num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//  22.- Crea el array arrayFunciones que tenga como valor las funciones: suma, resta y multiplicación (todas aceptan 2 números como argumento y devuelve el resultado de su operación)
+
+let arrayFunciones = [
+  function (a, b) {
+    return a + b;
+  }, // Función suma
+  function (a, b) {
+    return a - b;
+  }, // Función resta
+  function (a, b) {
+    return a * b;
+  }, // Función multiplicación
+];
 
 // Mezclando Arrays y Funciones
+
 // 23.- Crea la función 'ordenarArray2' que acepte como argumento un array de números y devuelva un array ordenado de mayor a menor
 // Ordenar [162]
 // Ordenar [189]
